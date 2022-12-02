@@ -1,0 +1,18 @@
+{
+  "files": {
+    "app.js": "/static/js/bundle.js",
+    "app.js.map": "/static/js/bundle.js.map",
+    "fonts/OpenSans-Regular.ttf": "/./fonts/OpenSans-Regular.ttf",
+    "favicon-16.png": "/favicon-16.png",
+    "favicon-32.png": "/favicon-32.png",
+    "favicon.ico": "/favicon.ico",
+    "index.html": "/index.html",
+    "manifest.json": "/manifest.json",
+    "static/media/1.png": "/static/media/1.c7931919.png",
+    "static/media/allcloth.png": "/static/media/allcloth.6679ca4c.png",
+    "static/media/recentlyadded.png": "/static/media/recentlyadded.50642d69.png"
+  },
+  "entrypoints": [
+    "static/js/bundle.js"
+  ]
+}
