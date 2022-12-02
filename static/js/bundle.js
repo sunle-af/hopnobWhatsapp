@@ -960,7 +960,7 @@ function App() {
     listItems = _useState4[0],
     setListItems = _useState4[1];
   var _useFonts = Object(expo_font__WEBPACK_IMPORTED_MODULE_10__["useFonts"])({
-      // 'Open-sans': __webpack_require__(/*! ../Hopnob/assets/fonts/OpenSans-Regular.ttf */ "./assets/fonts/OpenSans-Regular.ttf")
+      'Open-sans': __webpack_require__(/*! ../Hopnob/assets/fonts/OpenSans-Regular.ttf */ "./assets/fonts/OpenSans-Regular.ttf")
     }),
     _useFonts2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useFonts, 1),
     fontsLoaded = _useFonts2[0];
