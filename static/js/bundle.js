@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "60ddb08e3eb044061093";
+/******/ 	var hotCurrentHash = "e07b73a27bf99d3dcbc2";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -881,13 +881,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_native_web_dist_exports_Text__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-native-web/dist/exports/Text */ "./node_modules/react-native-web/dist/exports/Text/index.js");
 /* harmony import */ var react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-native-web/dist/exports/View */ "./node_modules/react-native-web/dist/exports/View/index.js");
 /* harmony import */ var react_native_web_dist_exports_Image__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-native-web/dist/exports/Image */ "./node_modules/react-native-web/dist/exports/Image/index.js");
-/* harmony import */ var react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-native-responsive-screen */ "./node_modules/react-native-responsive-screen/index.js");
-/* harmony import */ var react_native_element_dropdown__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-native-element-dropdown */ "./node_modules/react-native-element-dropdown/lib/module/index.js");
-/* harmony import */ var expo_font__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! expo-font */ "./node_modules/expo-font/build/index.js");
-/* harmony import */ var expo_app_loading__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! expo-app-loading */ "./node_modules/expo-app-loading/build/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var react_native_web_dist_exports_Button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-native-web/dist/exports/Button */ "./node_modules/react-native-web/dist/exports/Button/index.js");
+/* harmony import */ var react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-native-responsive-screen */ "./node_modules/react-native-responsive-screen/index.js");
+/* harmony import */ var react_native_element_dropdown__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-native-element-dropdown */ "./node_modules/react-native-element-dropdown/lib/module/index.js");
+/* harmony import */ var expo_font__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! expo-font */ "./node_modules/expo-font/build/index.js");
+/* harmony import */ var expo_app_loading__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! expo-app-loading */ "./node_modules/expo-app-loading/build/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__);
+
 
 
 
@@ -951,7 +953,11 @@ function App() {
     _useState6 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_useState5, 2),
     listItemsRA = _useState6[0],
     setListItemsRA = _useState6[1];
-  var _useFonts = Object(expo_font__WEBPACK_IMPORTED_MODULE_11__["useFonts"])({
+  var currURL = window.location.href;
+  var parsedURLarr = currURL.match(/(\d+)/);
+  var mobileNumber = parsedURLarr[0];
+  alert("Mobile Number is " + mobileNumber);
+  var _useFonts = Object(expo_font__WEBPACK_IMPORTED_MODULE_12__["useFonts"])({
       'Open-sans': __webpack_require__(/*! ../Hopnob/assets/fonts/OpenSans-Regular.ttf */ "./assets/fonts/OpenSans-Regular.ttf")
     }),
     _useFonts2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_useFonts, 1),
@@ -963,8 +969,10 @@ function App() {
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
     var expensesListResp = function () {
       var _ref = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0___default()(function* () {
-        yield axios__WEBPACK_IMPORTED_MODULE_13__["default"].get("https://hopnob-backend-cctjhm4vha-uc.a.run.app/api/v1/apparel/919997793031").then(function (response) {
+        yield axios__WEBPACK_IMPORTED_MODULE_14__["default"].get("https://hopnob-backend-cctjhm4vha-uc.a.run.app/api/v1/apparel/" + mobileNumber).then(function (response) {
           setNewarray(response.data.apparels);
+        }).catch(function (err) {
+          return alert(err);
         });
       });
       return function expensesListResp() {
@@ -986,26 +994,26 @@ function App() {
   });
   clothsArrayRA.reverse();
   if (!fontsLoaded) {
-    return Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(expo_app_loading__WEBPACK_IMPORTED_MODULE_12__["default"], {});
+    return Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(expo_app_loading__WEBPACK_IMPORTED_MODULE_13__["default"], {});
   }
   var ItemView = function ItemView(_ref2) {
     var item = _ref2.item;
-    return Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["Fragment"], {
-      children: Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    return Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["Fragment"], {
+      children: Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
         style: {
           backgroundColor: '#F5F5F5',
           borderRadius: 20,
           justifyContent: 'space-around',
           alignItems: 'center',
-          width: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_9__["widthPercentageToDP"])(30) - 10,
-          height: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_9__["widthPercentageToDP"])(35) - 10,
+          width: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_10__["widthPercentageToDP"])(30) - 10,
+          height: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_10__["widthPercentageToDP"])(35) - 10,
           marginBottom: 5,
           marginRight: 5
         },
-        children: Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_native_web_dist_exports_Image__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        children: Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_native_web_dist_exports_Image__WEBPACK_IMPORTED_MODULE_8__["default"], {
           style: {
             height: '100%',
-            width: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_9__["widthPercentageToDP"])(30) - 15
+            width: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_10__["widthPercentageToDP"])(30) - 15
           },
           source: {
             uri: item.image
@@ -1016,22 +1024,22 @@ function App() {
   };
   var recentlyaddedView = function recentlyaddedView(_ref3) {
     var item = _ref3.item;
-    return Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["Fragment"], {
-      children: Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    return Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["Fragment"], {
+      children: Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
         style: {
           backgroundColor: '#F5F5F5',
           borderRadius: 20,
           justifyContent: 'space-around',
           alignItems: 'center',
-          width: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_9__["widthPercentageToDP"])(30) - 10,
-          height: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_9__["widthPercentageToDP"])(35) - 10,
+          width: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_10__["widthPercentageToDP"])(30) - 10,
+          height: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_10__["widthPercentageToDP"])(35) - 10,
           marginBottom: 5,
           marginRight: 5
         },
-        children: Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_native_web_dist_exports_Image__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        children: Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_native_web_dist_exports_Image__WEBPACK_IMPORTED_MODULE_8__["default"], {
           style: {
             height: '100%',
-            width: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_9__["widthPercentageToDP"])(30) - 15
+            width: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_10__["widthPercentageToDP"])(30) - 15
           },
           source: {
             uri: item.image
@@ -1040,7 +1048,7 @@ function App() {
       })
     });
   };
-  return Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  return Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsxs"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
     style: {
       flex: 1,
       paddingLeft: 25,
@@ -1049,21 +1057,21 @@ function App() {
       backgroundColor: 'white',
       paddingTop: 15
     },
-    children: [Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    children: [Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsxs"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
       style: {
         marginBottom: 20,
         flexDirection: 'row',
-        width: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_9__["widthPercentageToDP"])(100) - 50,
+        width: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_10__["widthPercentageToDP"])(100) - 50,
         backgroundColor: 'white'
       },
-      children: [Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      children: [Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
         style: {
-          width: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_9__["widthPercentageToDP"])(50) - 20,
+          width: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_10__["widthPercentageToDP"])(50) - 20,
           justifyContent: 'space-around',
           backgroundColor: 'white',
           alignItems: 'flex-start'
         },
-        children: Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_native_web_dist_exports_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        children: Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_native_web_dist_exports_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
           style: {
             fontSize: 16,
             color: '#2D3791',
@@ -1071,14 +1079,14 @@ function App() {
           },
           children: "WARDROBE"
         })
-      }), Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      }), Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
         style: {
-          width: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_9__["widthPercentageToDP"])(30) - 10,
+          width: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_10__["widthPercentageToDP"])(30) - 10,
           flexDirection: 'row',
           alignItems: 'flex-end',
           backgroundColor: 'white'
         },
-        children: Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_native_element_dropdown__WEBPACK_IMPORTED_MODULE_10__["Dropdown"], {
+        children: Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_native_element_dropdown__WEBPACK_IMPORTED_MODULE_11__["Dropdown"], {
           style: styles.dropdown,
           placeholderStyle: styles.placeholderStyle,
           selectedTextStyle: styles.selectedTextStyle,
@@ -1096,13 +1104,13 @@ function App() {
             setValue(item.value);
           }
         })
-      }), Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      }), Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
         style: {
-          width: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_9__["widthPercentageToDP"])(20) - 20,
+          width: Object(react_native_responsive_screen__WEBPACK_IMPORTED_MODULE_10__["widthPercentageToDP"])(20) - 20,
           alignItems: 'flex-end',
           backgroundColor: 'white'
         },
-        children: Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_native_web_dist_exports_Image__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        children: Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_native_web_dist_exports_Image__WEBPACK_IMPORTED_MODULE_8__["default"], {
           style: {
             width: 35,
             height: '100%'
@@ -1110,22 +1118,22 @@ function App() {
           source: __webpack_require__(/*! ./assets/images/wardrobe/Arrowbutton.png */ "./assets/images/wardrobe/Arrowbutton.png")
         })
       })]
-    }), Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }), Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsxs"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
       style: {
         marginTop: 16
       },
-      children: [Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_native_web_dist_exports_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      children: [Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_native_web_dist_exports_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
         style: {
           fontSize: 12,
           fontWeight: '700',
           fontFamily: 'Open-sans'
         },
         children: "RECENTLY ADDED"
-      }), Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      }), Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_native_web_dist_exports_View__WEBPACK_IMPORTED_MODULE_7__["default"], {
         style: {
           marginTop: 5
         },
-        children: Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_native_web_dist_exports_FlatList__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        children: Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_native_web_dist_exports_FlatList__WEBPACK_IMPORTED_MODULE_3__["default"], {
           horizontal: true,
           data: listItemsRA
           ,
@@ -1141,7 +1149,7 @@ function App() {
           }
         })
       })]
-    }), Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_native_web_dist_exports_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    }), Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_native_web_dist_exports_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
       style: {
         marginVertical: 10,
         fontSize: 12,
@@ -1149,7 +1157,7 @@ function App() {
         fontFamily: 'Open-sans'
       },
       children: "All CLOTHES"
-    }), Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_native_web_dist_exports_FlatList__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }), Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_native_web_dist_exports_FlatList__WEBPACK_IMPORTED_MODULE_3__["default"], {
       numColumns: 3,
       data: listItems
       ,
@@ -65230,6 +65238,71 @@ function getApplication(RootComponent, initialProps, WrapperComponent) {
     getStyleElement: getStyleElement
   };
 }
+
+/***/ }),
+
+/***/ "./node_modules/react-native-web/dist/exports/Button/index.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/react-native-web/dist/exports/Button/index.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _StyleSheet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../StyleSheet */ "./node_modules/react-native-web/dist/exports/StyleSheet/index.js");
+/* harmony import */ var _TouchableOpacity__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../TouchableOpacity */ "./node_modules/react-native-web/dist/exports/TouchableOpacity/index.js");
+/* harmony import */ var _Text__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Text */ "./node_modules/react-native-web/dist/exports/Text/index.js");
+
+
+
+
+
+var Button = react__WEBPACK_IMPORTED_MODULE_0__["forwardRef"](function (props, forwardedRef) {
+  var accessibilityLabel = props.accessibilityLabel,
+    color = props.color,
+    disabled = props.disabled,
+    onPress = props.onPress,
+    testID = props.testID,
+    title = props.title;
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_TouchableOpacity__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    accessibilityLabel: accessibilityLabel,
+    accessibilityRole: "button",
+    disabled: disabled,
+    focusable: !disabled,
+    onPress: onPress,
+    ref: forwardedRef,
+    style: [styles.button, color && {
+      backgroundColor: color
+    }, disabled && styles.buttonDisabled],
+    testID: testID
+  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Text__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    style: [styles.text, disabled && styles.textDisabled]
+  }, title));
+});
+Button.displayName = 'Button';
+var styles = _StyleSheet__WEBPACK_IMPORTED_MODULE_1__["default"].create({
+  button: {
+    backgroundColor: '#2196F3',
+    borderRadius: 2
+  },
+  text: {
+    color: '#fff',
+    fontWeight: '500',
+    padding: 8,
+    textAlign: 'center',
+    textTransform: 'uppercase'
+  },
+  buttonDisabled: {
+    backgroundColor: '#dfdfdf'
+  },
+  textDisabled: {
+    color: '#a1a1a1'
+  }
+});
+/* harmony default export */ __webpack_exports__["default"] = (Button);
 
 /***/ }),
 
